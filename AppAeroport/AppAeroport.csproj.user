@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AppWindow\AeroportWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AppWindow\ListaAeroportWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AppWindow\ListaDestinatii800and1200euro.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AppWindow\ListaDestinatiiSumaIncasata.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AppWindow\ListaPasagDestinClasa.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AppWindow\ListaPasageriWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AppWindow\PasagerWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AppWindow\AeroportWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AppWindow\ListaAeroportWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AppWindow\ListaDestinatii800and1200euro.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AppWindow\ListaDestinatiiSumaIncasata.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AppWindow\ListaPasagDestinClasa.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AppWindow\ListaPasageriWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AppWindow\PasagerWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

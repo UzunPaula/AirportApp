@@ -1,0 +1,41 @@
+﻿<Window x:Class="AppAeroport.AppWindow.ListaAeroportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppAeroport.AppWindow"
+        mc:Ignorable="d"
+        Title="ListaAeroportWindow" Height="450" Width="750">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Background="Black">
+            <TextBlock Text="Lista rutelor" FontSize="20" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <DataGrid x:Name="dgRute" AutoGenerateColumns="False" Margin="10" FontSize="20" IsReadOnly="False" ItemsSource="{Binding Aeroporturi}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Destinatia" Binding="{Binding Destinatia}" MinWidth="150"/>
+                    <DataGridTextColumn Header="Clasa" Binding="{Binding Clasa}" MinWidth="80"/>
+                    <DataGridTextColumn Header="Pret" Binding="{Binding Pret}" MinWidth="80"/>
+                    <DataGridTextColumn Header="Nume pasager" Binding="{Binding Pasager.NumePasager}" MinWidth="150"/>
+                    <DataGridTextColumn Header="Prenume pasager" Binding="{Binding Pasager.PrenumePasager}" MinWidth="150"/>
+                </DataGrid.Columns>
+
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Editare" Click="Editare_Click" />
+                        <MenuItem Header="Stergere" Click="Stergere_Click" />
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>

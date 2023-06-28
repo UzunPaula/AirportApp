@@ -1,0 +1,60 @@
+﻿<Window x:Class="AppAeroport.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppAeroport"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="850" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="7"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="{TemplateBinding Margin}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Vertical" Background="Black">
+            <TextBlock Text="Aplicatia Aeroport" FontWeight="Bold" FontSize="30" TextAlignment="Center" Foreground="White" Margin="10"/>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Left" Orientation="Vertical" Width="290" Background="Black">
+            <Button Content="Introduceti pasagerul" x:Name="btnShowAddPasager" Command="{Binding AddCommandPasager}" Click="btnShowAddPasager_Click"/>
+            <Button Content="Lista pasageri" x:Name="btnShowListaPasageri" Command="{Binding ShowListaPasageri}" Click="btnShowListaPasageri_Click"/>
+            <Button Content="Introduceti ruta" x:Name="btnShowAddRuta" Command="{Binding AddCommandRuta}" Click="btnShowAddRuta_Click"/>
+            <Button Content="Lista rutelor" x:Name="btnShowListaRute" Command="{Binding ShowListaRute}" Click="btnShowListaRute_Click"/>
+          
+            <Button x:Name="btnShowPasagDestClas" Command="{Binding ShowListaPasagDestClas}">
+                <TextBlock TextWrapping="Wrap" Text="Pasagerii cu destinatia spre Paris si clasa 1" TextAlignment="Center"/>
+            </Button>
+
+            <Button x:Name="btnListaPasageriDestPretBetween" Command="{Binding ShowPasageriDestPretBetween}">
+                <TextBlock TextWrapping="Wrap" Text="Destinatiile cu pretul intre 800 si 1200 euro" TextAlignment="Center"/>
+            </Button>
+
+            <Button x:Name="btnListaDestinSumIncasatPas" Command="{Binding ShowDestinSumIncasatPas}">
+                <TextBlock TextWrapping="Wrap" Text="Destinatiile disponibile si suma incasata de la pasageri" TextAlignment="Center"/>
+            </Button>
+
+        </StackPanel>
+
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Width="560" Height="20" Background="Black">
+            <TextBlock Text="Subsol" TextAlignment="Center" Margin="270 0 0 0" FontWeight="Bold" Foreground="White"/>
+        </StackPanel>
+        <StackPanel>
+            <Image Source="Resources/aeroport.jpeg" Stretch="UniformToFill" Height="505" Width="561"/> 
+        </StackPanel>
+    </DockPanel>
+</Window>

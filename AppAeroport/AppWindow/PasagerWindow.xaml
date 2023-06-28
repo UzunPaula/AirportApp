@@ -1,0 +1,76 @@
+﻿<Window x:Class="AppAeroport.AppWindow.PasagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppAeroport.AppWindow"
+        mc:Ignorable="d"
+        Title="PasagerWindow" Height="400" Width="600">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="5 10 5 10"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5 10 5 10"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+
+        <Style TargetType="DatePicker">
+            <Setter Property="Margin" Value="5 10 5 10"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="55 20 55 10"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="20" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Background="Black">
+            <TextBlock Text="Introducerea pasagerilor" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" Padding="10" Margin="10" Foreground="White"/>
+        </StackPanel>
+
+        <TextBlock Text="Nume: " Grid.Row="1" Grid.Column="0"/>
+        <TextBox x:Name="txtNume" Grid.Row="1" Grid.Column="1" Text="{Binding NumePasager}"/>
+
+        <TextBlock Text="Prenume: " Grid.Row="2" Grid.Column="0"/>
+        <TextBox x:Name="txtPrenume" Grid.Row="2" Grid.Column="1" Text="{Binding PrenumePasager}"/>
+
+        <TextBlock Text="Telefon: " Grid.Row="4" Grid.Column="0"/>
+        <TextBox x:Name="txtTelefon" Grid.Row="4" Grid.Column="1" Text="{Binding Telefon}"/>
+
+        <Button x:Name="btnAddPasager" Grid.Row="5" Content="Adauga pasagerul" Click="btnAddPasager_Click" Grid.Column="1" Margin="68,39,131,38"/>
+    </Grid>
+</Window>
